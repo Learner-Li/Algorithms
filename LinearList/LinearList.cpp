@@ -4,12 +4,12 @@ using namespace std;
 
 const int MaxSize = 100;
 template <class DataType>
-class SeqList
+class LinearList
 {
 public:
-    SeqList(){length=0;}            //
-    SeqList(DataType a[],int n);    //
-    ~SeqList(){}                    //
+    LinearList(){length=0;}            //
+    LinearList(DataType a[],int n);    //
+    ~LinearList(){}                    //
     int Length(){return length;}    //
     DataType Get(int i);            //
     int Locate(DataType x);         //
@@ -22,7 +22,7 @@ private:
 };
 
 template <class DataType>
-SeqList<DataType>::SeqList(DataType a[],int n)
+LinearList<DataType>::LinearList(DataType a[],int n)
 {
     if(n>MaxSize) throw "wrong parameter";
     for(int i=0;i<n;i++)
@@ -31,14 +31,14 @@ SeqList<DataType>::SeqList(DataType a[],int n)
 }
 
 template <class DataType>
-DataType SeqList<DataType>::Get(int i)
+DataType LinearList<DataType>::Get(int i)
 {
     if(i<1 && i>length) throw "wrong Location";
     else return data[i-1];
 }
 
 template <class DataType>
-int SeqList<DataType>::Locate(DataType x)
+int LinearList<DataType>::Locate(DataType x)
 {
     for(int i=0;i<length;i++)
         if(data[i]==x) return i+1;
@@ -46,7 +46,7 @@ int SeqList<DataType>::Locate(DataType x)
 }
 
 template <class DataType>
-void SeqList<DataType>::Insert(int i,DataType x)
+void LinearList<DataType>::Insert(int i,DataType x)
 {
     if(length>=MaxSize) throw "Overflow";
     if(i<1 || i>length+1) throw "Location";
@@ -57,7 +57,7 @@ void SeqList<DataType>::Insert(int i,DataType x)
 }
 
 template <class DataType>
-DataType SeqList<DataType>::Delete(int i)
+DataType LinearList<DataType>::Delete(int i)
 {
     int x;
     if(length==0) throw "Underflow";
@@ -70,7 +70,7 @@ DataType SeqList<DataType>::Delete(int i)
 }
 
 template <class DataType>
-void SeqList<DataType>::PrintList()
+void LinearList<DataType>::PrintList()
 {
     for(int i=0;i<length;i++)
         cout<<data[i]<<endl;
@@ -78,7 +78,7 @@ void SeqList<DataType>::PrintList()
 
 int main()
 {
-    SeqList<int> p;
+    LinearList<int> p;
     p.Insert(1,5);
     p.Insert(2,9);
     p.PrintList();
