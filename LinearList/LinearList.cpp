@@ -7,18 +7,18 @@ template <class DataType>
 class LinearList
 {
 public:
-    LinearList(){length=0;}            //
-    LinearList(DataType a[],int n);    //
-    ~LinearList(){}                    //
-    int Length(){return length;}    //
-    DataType Get(int i);            //
-    int Locate(DataType x);         //
-    void Insert(int i,DataType x);  //
-    DataType Delete(int i);         //
-    void PrintList();               //
+    LinearList(){length=0;}
+    LinearList(DataType a[],int n);
+    ~LinearList(){}
+    int Length(){return length;}
+    DataType Get(int i);
+    int Locate(DataType x);
+    void Insert(int i,DataType x);
+    DataType Delete(int i);
+    void PrintList();
 private:
-    DataType data[MaxSize];         //
-    int length;                     //
+    DataType data[MaxSize];
+    int length;
 };
 
 template <class DataType>
